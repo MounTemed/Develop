@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,91 +7,9 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="./file_type_vscode_icon_130084.png" type="image/x-icon">
-    <style>
-        @keyframes gradient-animation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .gradient-text {
-            background: linear-gradient(270deg, #4ade80, #3b82f6);
-            background-size: 400% 400%;
-            animation: gradient-animation 5s ease infinite;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .bg-custom { background: linear-gradient(135deg, #e0f7fa, #ffebee); }
-        .bg-custom-dark { background: linear-gradient(135deg, #0f172a, #1e293b); }
-        .text-custom-dark { color: #ffffff; }
-        .transition-all { transition: all 0.5s ease; }
-        .icon-container { display: flex; justify-content: center; align-items: center; margin-bottom: 20px; }
-        .icon { font-size: 24px; color: #CCCCCC; cursor: pointer; margin: 0 10px; position: relative; }
-        .icon.active { transform: scale(1.2); }
-        .icon:hover .icon-background { opacity: 1; }
-        .dark .icon-background { background-color: rgba(255, 255, 255, 0.2); }
-        .dark .icon:hover .icon-background { background-color: rgba(255, 255, 255, 0.4); }
-    </style>
+    <link rel="stylesheet" href="./style.css">
 </head>
-
 <body class="bg-custom flex items-center justify-center min-h-screen transition-colors duration-300" id="body">
-    <main class="bg-white shadow-md rounded-lg p-8 max-w-md text-center transition-colors duration-300" id="container">
-        <div class="icon-container">
-            <div class="icon" role="button" aria-label="Светлый режим" tabindex="0" id="lightMode">
-                <i class="fas fa-sun"></i>
-                <div class="icon-background"></div>
-            </div>
-            <div class="icon" role="button" aria-label="Темный режим" tabindex="0" id="darkMode">
-                <i class="fas fa-moon"></i>
-                <div class="icon-background"></div>
-            </div>
-        </div>
-        <h1 class="text-3xl font-bold text-gray-800 transition-all">Привет!</h1>
-        <p class="mt-4 text-gray-600 font-bold transition-all">Я начинающий DevOps-Engineer.</p>
-        <div class="flex items-center justify-center mt-4">
-            <p class="mr-3 text-3xl font-bold gradient-text transition-all">LaiMicK</p>
-            <img src="./123.jpg" alt="Ваше имя" class="ml-3 h-16 w-16 rounded-full">
-        </div>
-        <p class="mt-2 text-gray-500 transition-all">Я занимаюсь автоматизацией и оптимизацией процессов разработки и развертывания.</p>
-        <a href="https://t.me/sqlinked" class="mt-6 inline-block bg-blue-500 text-white rounded-lg px-4 py-2 hover:bg-blue-600 transition-all">Связаться со мной</a>
-
-        <div class="mt-8 flex justify-center space-x-4">
-            <img src="./social.png" alt="Docker" class="h-10 w-10 transition-all">
-            <img src="./python.png" alt="Python" class="h-10 w-10 transition-all">
-            <img src="./kubernetes_logo_icon_168359.png" alt="Kubernetes" class="h-10 w-10 transition-all">
-        </div>
-    </main>
-
-    <script>
-        const body = document.getElementById('body');
-        const container = document.getElementById('container');
-        const icons = document.querySelectorAll('.icon');
-
-        icons.forEach(icon => {
-            icon.addEventListener('click', () => {
-                const isLightMode = icon.id === 'lightMode';
-                toggleTheme(isLightMode);
-                moveIcons(isLightMode ? 'light' : 'dark');
-            });
-        });
-
-        function toggleTheme(isLightMode) {
-            body.classList.toggle('bg-custom-dark', !isLightMode);
-            body.classList.toggle('bg-custom', isLightMode);
-            container.classList.toggle('bg-gray-800', !isLightMode);
-            container.classList.toggle('bg-white', isLightMode);
-            document.querySelectorAll('#container h1, #container p').forEach(el => {
-                el.classList.toggle('text-custom-dark', !isLightMode);
-                el.classList.toggle('text-gray-800', isLightMode);
-            });
-        }
-
-        function moveIcons(mode) {
-            icons.forEach(icon => icon.classList.remove('active'));
-            document.getElementById(mode === 'light' ? 'lightMode' : 'darkMode').classList.add('active');
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
-
 </html>
