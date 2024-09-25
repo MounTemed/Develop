@@ -1,0 +1,63 @@
+:root {
+    --primary-color: #4ade80;
+    --secondary-color: #3b82f6;
+    --background-light: #e0f7fa;
+    --background-dark: #0f172a;
+    --text-light: #333;
+    --text-dark: #ffffff;
+    --icon-color: #CCCCCC;
+    --icon-active-color: #FFD700;
+    --icon-dark-color: rgba(255, 255, 255, 0.5);
+    --font-size: 16px;
+}
+
+@keyframes gradient-animation {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+body { font-size: var(--font-size); }
+
+.gradient-text {
+    background: linear-gradient(270deg, var(--primary-color), var(--secondary-color));
+    background-size: 400% 400%;
+    animation: gradient-animation 5s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.bg-custom { background: linear-gradient(135deg, var(--background-light), #ffebee); }
+.bg-custom-dark { background: linear-gradient(135deg, var(--background-dark), #1e293b); }
+.text-custom-dark { color: var(--text-dark); }
+
+.icon-container {
+    display: flex; justify-content: center; align-items: center; margin-bottom: 20px;
+}
+
+.icon {
+    font-size: 24px; color: var(--icon-color); cursor: pointer; margin: 0 10px; position: relative; transition: transform 0.1s, color 0.2s; 
+}
+
+.icon:hover {
+    transform: scale(1.2); 
+}
+
+.icon-background {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(255, 255, 255, 0.2); opacity: 0; transition: opacity 0.2s; border-radius: 50%;
+}
+
+.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.fade-in-active { opacity: 1; transform: translateY(0); }
+
+img {
+    transition: transform 0.1s; 
+}
+
+img:hover {
+    transform: scale(1.1); 
+}
+
+.transition-transform {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
